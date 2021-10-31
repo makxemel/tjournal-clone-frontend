@@ -1,6 +1,12 @@
 import React from 'react';
-import { Paper, Typography } from '@material-ui/core';
+import { IconButton, Paper, Typography } from '@material-ui/core';
 import Image from 'next/image';
+import {
+  ModeCommentOutlined as CommentsIcon,
+  RepeatOutlined as RepostIcon,
+  BookmarkBorderOutlined as FavoriteIcon,
+  ShareOutlined as ShareIcon,
+} from '@material-ui/icons';
 
 import styles from './Post.module.scss';
 
@@ -21,6 +27,30 @@ export const Post: React.FC = () => {
         height={500}
         width={600}
       />
+      <div>
+        <ul className={styles.actions}>
+          <li>
+            <IconButton size="small">
+              <CommentsIcon />
+            </IconButton>
+          </li>
+          <li>
+            <IconButton size="small">
+              <RepostIcon />
+            </IconButton>
+          </li>
+          <li>
+            <IconButton size="small">
+              <FavoriteIcon />
+            </IconButton>
+          </li>
+          <li>
+            <IconButton size="small">
+              <ShareIcon />
+            </IconButton>
+          </li>
+        </ul>
+      </div>
     </Paper>
   );
 };
